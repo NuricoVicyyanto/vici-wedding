@@ -1,123 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vicky and Who Wedding</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;400;600;700&display=swap"
-      rel="stylesheet"
-    />
 
-    <!-- simply countdown -->
-    <link rel="stylesheet" href="css/simplyCountdown.theme.default.css" />
-    <script src="js/simplyCountdown.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <section
-      id="hero"
-      class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
-    >
-      <main>
-        <h4>Kepada Bapak/Ibu/Saudara/i</h4>
-        <h1>Vicky & Who?</h1>
-        <p>Akan melangsungkan resepsi pernikahan dalam:</p>
-        <div class="simply-countdown"></div>
-        <a href="#undangan" class="btn btn-lg mt-4">Lihat Undangan</a>
-      </main>
-    </section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kevin dan Yola</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;400;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(/img/hero.jpg);
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      filter: grayscale();
+    }
 
-    <nav id="undangan" class="navbar navbar-expand-md bg-body-transparent sticky-top mynavbar">
-      <div class="container">
-        <a class="navbar-brand" href="#">Vici</a>
-        <button
-          class="navbar-toggler border-0"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Vici</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
+    .home {
+      background-image: url(/img/flower.png);
+      background-size: cover;
+      min-height: 100vh;
+      margin-top: -6rem;
+      padding-top: 15rem;
+      padding-bottom: 5rem;
+    }
+
+    :root {
+      --pink: #FFA5B1;
+      --dark: #1B1B1B;
+      --accent: #FF8A98;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #fff;
+      color: var(--dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1920/1080');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: 'Sacramento', cursive;
+      font-size: clamp(3rem, 8vw, 6rem);
+      color: var(--pink);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 1rem;
+    }
+
+    .hero h4 {
+      font-weight: 600;
+      text-transform: uppercase;
+      color: white;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      letter-spacing: 3px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.1rem);
+      margin-bottom: 2rem;
+    }
+
+    .hero .btn {
+      background-color: var(--pink);
+      color: white;
+      padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 30px);
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+
+    .hero .btn:hover {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+    }
+
+    .navbar-brand {
+      font-family: 'Sacramento', cursive;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      color: var(--pink);
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--dark);
+      margin: 0 15px;
+      transition: color 0.3s ease;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+    }
+
+    .nav-link:hover {
+      color: var(--pink);
+    }
+
+    .couple-card {
+      text-align: center;
+      padding: clamp(20px, 4vw, 40px) clamp(15px, 3vw, 30px);
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .couple-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .couple-card h3 {
+      color: var(--pink);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .schedule-card,
+    .qris-card {
+      text-align: center;
+      padding: clamp(20px, 4vw, 40px);
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+
+    .schedule-card h4,
+    .qris-card h4 {
+      color: var(--pink);
+      font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    section {
+      padding: clamp(60px, 10vw, 120px) 0;
+    }
+
+    .home h2,
+    .couple h2,
+    .schedule h2,
+    .gifts h2 {
+      font-family: 'Sacramento', cursive;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: var(--pink);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .simply-countdown {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(10px, 2vw, 20px);
+      margin: 30px 0;
+    }
+
+    .simply-countdown>.simply-section {
+      background: var(--pink);
+      padding: clamp(15px, 3vw, 20px);
+      border-radius: 15px;
+      color: white;
+      min-width: clamp(80px, 20vw, 120px);
+      box-shadow: 0 5px 15px rgba(255, 165, 177, 0.3);
+    }
+
+    .simply-countdown>.simply-section .simply-amount {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .simply-countdown>.simply-section .simply-word {
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      font-weight: 500;
+    }
+
+    .copy-button {
+      background-color: var(--pink);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    .copy-button:hover {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 10px 0;
+      }
+
+      .offcanvas {
+        max-width: 75%;
+      }
+
+      .couple-card,
+      .schedule-card,
+      .qris-card {
+        margin: 10px;
+      }
+
+      .qris-card img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    @media (max-height: 600px) and (orientation: landscape) {
+      .hero {
+        min-height: 120vh;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+      }
+
+      .simply-countdown>.simply-section {
+        padding: 10px;
+        min-width: 70px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section id="hero"
+    class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+    <main>
+      <h4>Kepada Bapak/Ibu/Saudara/i</h4>
+      <h1>Kevin & Yola</h1>
+      <p>Akan melangsungkan resepsi pernikahan dalam:</p>
+      <div class="simply-countdown"></div>
+      <a href="#undangan" class="btn btn-lg mt-4">Lihat Undangan</a>
+    </main>
+  </section>
+
+  <nav id="undangan" class="navbar navbar-expand-md sticky-top mynavbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">Kevin & Yola</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#couple">Couple</a>
+            <a class="nav-link" href="#schedule">Schedule</a>
+            <a class="nav-link" href="#gallery">Gallery</a>
+            <a class="nav-link" href="#rsvp">RSVP</a>
           </div>
-          <div class="offcanvas-body">
-            <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="#home">Home</a>
-              <a class="nav-link" href="#info">Info</a>
-              <a class="nav-link" href="#story">Story</a>
-              <a class="nav-link" href="#gallery">Gallery</a>
-              <a class="nav-link" href="#rsvp">RSVP</a>
-              <a class="nav-link" href="#gifts">Gifts</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="home">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h2>Acara Pernikahan</h2>
+          <h3>Diselenggarakan pada 16 Maret 2025 di Bondowoso, Jawa Timur.</h3>
+          <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri resepsi
+            pernikahan putra-putri kami.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="couple" class="couple">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center mb-5">
+          <h2>Mempelai</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <div class="couple-card">
+            <h3>Kevin Yudhistira Mahendra</h3>
+            <p>Putra dari</p>
+            <p>Bapak Muharto<br>&<br>Ibu Maimunah</p>
+          </div>
+        </div>
+        <div class="col-md-2 text-center d-flex align-items-center justify-content-center">
+          <h1>&</h1>
+        </div>
+        <div class="col-md-5">
+          <div class="couple-card">
+            <h3>Ni Made Yola Dewi</h3>
+            <p>Putri dari</p>
+            <p>Bapak I Ketut Sumerta<br>&<br>Ibu Ni Putu Sulastri</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="schedule">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center mb-5">
+          <h2>Jadwal Acara</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="schedule-card">
+            <h4>Akad Nikah & Resepsi</h4>
+            <p>Minggu, 16 Maret 2025</p>
+            <p>Pukul: 08:00 WIB - Selesai</p>
+            <p>Lokasi:</p>
+            <p>Jalan Perikanan Darat<br>
+              Tenggarang, Bondowoso<br>
+              Jawa Timur</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gifts" class="gifts">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center mb-5">
+          <h2>Wedding Gifts</h2>
+          <p>Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda
+            kasih Anda, Anda dapat memberi kado secara cashless.</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="qris-card">
+            <h4>Scan QRIS</h4>
+            <img src="/img/qr.jpeg" alt="QRIS Code" class="img-fluid" style="width: 200px; height: auto;" />
+            <div class="mt-3">
+              <p>Nomor Rekening: ID1024331254234</p>
+              <p>a.n. Vaporvins, Bali</p>
+              <button class="copy-button" onclick="copyToClipboard('ID1024331254234')">
+                Salin Nomor Rekening
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </section>
 
-    <section id="home" class="home">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8 text-center">
-            <h2>Acara Pernikahan</h2>
-            <h3>
-              Diselenggarakan pada 16 Februari 2025 di Bondowoso, Jawa Timur.
-            </h3>
-            <p>
-              Oleh karena itu, dengan segala hormat, kami bermaksud untuk
-              mengundang Bapak/Ibu, Saudara/i, untuk hadir pada acara pernikahan
-              kami.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplyCountdown.js/1.5.0/simplyCountdown.min.js"></script>
+  <script>
+    simplyCountdown(".simply-countdown", {
+      year: 2025,
+      month: 3,
+      day: 16,
+      hours: 8,
+      minutes: 0,
+      seconds: 0,
+      words: {
+        days: { singular: "Hari", plural: "Hari" },
+        hours: { singular: "Jam", plural: "Jam" },
+        minutes: { singular: "Menit", plural: "Menit" },
+        seconds: { singular: "Detik", plural: "Detik" }
+      }
+    });
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-
-    <script>
-      simplyCountdown(".simply-countdown", {
-        year: 2025, // required
-        month: 2, // required
-        day: 16, // required
-        hours: 8, // Default is 0 [0-23] integer
-        minutes: 0, // Default is 0 [0-59] integer
-        seconds: 0, // Default is 0 [0-59] integer
-        words: {
-          //words displayed into the countdown
-          days: { singular: "day", plural: "Hari" },
-          hours: { singular: "hour", plural: "Jam" },
-          minutes: { singular: "minute", plural: "Menit" },
-          seconds: { singular: "second", plural: "Detik" },
-        },
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Nomor rekening berhasil disalin!');
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
       });
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>

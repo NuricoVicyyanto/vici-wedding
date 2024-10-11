@@ -75,6 +75,86 @@
       margin-bottom: 1.5rem;
     }
 
+    .gallery {
+            background-color: #fff;
+            padding: clamp(60px, 10vw, 120px) 0;
+        }
+
+        .gallery h2 {
+            font-family: 'Sacramento', cursive;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--pink);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .gallery-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* New styles for RSVP */
+        .rsvp {
+            background-color: #fff;
+            padding: clamp(60px, 10vw, 120px) 0;
+        }
+
+        .rsvp h2 {
+            font-family: 'Sacramento', cursive;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--pink);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .rsvp-form {
+            background: white;
+            padding: clamp(20px, 4vw, 40px);
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-control {
+            border: 2px solid #eee;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .form-control:focus {
+            border-color: var(--pink);
+            box-shadow: none;
+        }
+
+        .btn-rsvp {
+            background-color: var(--pink);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-rsvp:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
     .hero p {
       font-size: clamp(1rem, 2.5vw, 1.1rem);
       margin-bottom: 2rem;
@@ -365,6 +445,38 @@
     </div>
   </section>
 
+  <section id="gallery" class="gallery">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center mb-5">
+                <h2>Gallery</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Gallery 1" />
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Gallery 2" />
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Gallery 3" />
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/300" alt="Gallery 4" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
   <section id="gifts" class="gifts">
     <div class="container">
       <div class="row justify-content-center">
@@ -391,6 +503,45 @@
       </div>
     </div>
   </section>
+
+<!-- New RSVP Section -->
+<section id="rsvp" class="rsvp">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center mb-5">
+                <h2>RSVP</h2>
+                <p>Mohon konfirmasi kehadiran Anda dengan mengisi form di bawah ini.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="rsvp-form">
+                    <form id="rsvpForm" onsubmit="handleSubmit(event)">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Nama Lengkap" required>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-control" id="attendance" required>
+                                <option value="">Apakah Anda akan hadir?</option>
+                                <option value="yes">Ya, saya akan hadir</option>
+                                <option value="no">Maaf, saya tidak bisa hadir</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" class="form-control" id="guests" placeholder="Jumlah Tamu (maksimal 2)" min="1" max="2" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" rows="3" placeholder="Ucapan & Doa"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-rsvp">Kirim RSVP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

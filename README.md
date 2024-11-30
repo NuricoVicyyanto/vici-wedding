@@ -2,12 +2,12 @@
 
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 [![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9C%94-green)](https://opensource.org)
-[![GitHub issues](https://img.shields.io/github/issues/nuricovicyyanto/vhub-laravel)](https://github.com/nuricovicyyanto/vhub-laravel/issues)
-[![GitHub forks](https://img.shields.io/github/forks/nuricovicyyanto/vhub-laravel)](https://github.com/nuricovicyyanto/vhub-laravel/network/members)
-[![GitHub stars](https://img.shields.io/github/stars/nuricovicyyanto/vhub-laravel)](https://github.com/nuricovicyyanto/vhub-laravel/stargazers)
-[![GitHub contributors](https://img.shields.io/github/contributors/nuricovicyyanto/vhub-laravel)](https://github.com/nuricovicyyanto/vhub-laravel/graphs/contributors)
-[![Last Commit](https://img.shields.io/github/last-commit/nuricovicyyanto/vhub-laravel)](https://github.com/nuricovicyyanto/vhub-laravel/commits)
-[![PRs Welcome](https://img.shields.io/badge/PRs%20Welcome-Yes-blue)](https://github.com/nuricovicyyanto/vhub-laravel/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/nuricovicyyanto/vhub-laravel)](https://github.com/nuricovicyyanto/vici-wedding/issues)
+[![GitHub forks](https://img.shields.io/github/forks/nuricovicyyanto/vhub-laravel)](https://github.com/nuricovicyyanto/vici-wedding/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/nuricovicyyanto/vhub-laravel)](https://github.com/nuricovicyyanto/vici-wedding/stargazers)
+[![GitHub contributors](https://img.shields.io/github/contributors/nuricovicyyanto/vhub-laravel)](https://github.com/nuricovicyyanto/vici-wedding/graphs/contributors)
+[![Last Commit](https://img.shields.io/github/last-commit/nuricovicyyanto/vhub-laravel)](https://github.com/nuricovicyyanto/vici-wedding/commits)
+[![PRs Welcome](https://img.shields.io/badge/PRs%20Welcome-Yes-blue)](https://github.com/nuricovicyyanto/vici-wedding/pulls)
 
 
 This repository contains the code for the **Vici-Wedding** project. It is an online wedding invitation web application designed to provide couples with a beautiful and functional platform to invite guests to their wedding. The application is built using **HTML**, **CSS**, **JavaScript**, and **Bootstrap**, ensuring a responsive and user-friendly experience.
